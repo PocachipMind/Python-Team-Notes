@@ -14,7 +14,7 @@ def dfs(graph, v, visited):
           
 n = 노드 수
 m = 간선 수
-graph = [[] * n]
+graph = [[] * for _ in range(n)]
           
 for _ in range(m):
     a,b = map(int,input().split())
