@@ -21,3 +21,13 @@ parent = [0] * (v + 1) # 부모테이블 초기화
 #부모테이블 자기자신을 부모로 초기화
 for i in range(1, v+1):
     parent[i] = i
+    
+
+
+########################################
+
+#union 연산 각각 수행
+for i in range(e):
+    a, b = map(int,input().split())
+    union_parent(parent,a,b)
+
