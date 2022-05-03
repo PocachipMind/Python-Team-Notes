@@ -30,3 +30,7 @@ for _ in range(m):
     graph[a].append(b)
 
 visited = [False] * n
+
+
+
+bfs(graph, 1, visited)
