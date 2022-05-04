@@ -1,0 +1,152 @@
+알아둬야할 함수들
+
+
+최대 = 1e9
+
+리스트.count(요소) = 요소가 몇개 들어있는지 리턴
+
+sort(reverse = True)
+sorted(reverse=True)
+
+itertools들--------------------------------------
+
+
+data = [ 'a', 'b', 'c' ]
+
+
+
+result = list(permutations(data,3)) # 모든 순열 구하기
+
+
+result = list(combinations(data,2)) # 2개 뽑는 모든 조합 구하기
+
+
+result = list(product(data, repeat=2)) # 2개를 뽑는 모든 순열 구하기(중복 허용)
+
+result = list(combinations_with_replacement(data,2)) # 2개를 뽑는 모든 조합 구하기(중복 허용)
+
+
+
+collection들--------------------------------------
+
+카운터
+둘다 초기값 디폴트 있음
+count = collections.Counter(nums)
+>> collections.Counter(nums).most_common(k)
+nums에서 최대 값을 가진 k개 추출
+
+
+
+디폴트사전
+collections.defaultdict(int)
+
+
+
+데큐
+collections.deque(리스트)
+
+
+
+
+
+------------------------------
+
+import heapq
+
+리스트 = []
+
+heapq.heappush(리스트, 넣을거)
+heapq.heappop(리스트)
+
+
+
+기존 리스트를 힙으로 변환
+
+리스트 = [4, 1, 7, 3, 8, 5]
+heapq.heapify(리스트 )
+print(리스트 )
+
+리스트에 모두 삽입한 다음 마지막에 heapify()하는 방식 
+
+
+
+
+--------------
+
+import bisect
+
+bisect.bisect_left(정렬된리스트,값)     
+bisect.bisect_right(정렬된리스트,값)   
+
+정렬된 순서를 유지하면서 리스트에 데이터를 삽입할 가장 (왼쪽/오른쪽) 인덱스를 찾는 메서드
+
+
+만약 4라면
+1  2  4  4  8 
+    ↑    ↑
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+몰랐던 함수들
+
+리스트 뒤집기는 [::-1]
+---------------------------------
+.isalpha()
+
+.isdigit
+
+-------------------------------------------------------
+결과 = A if 조건 else B
+참이면 A 아니면 B
+기본 if - else문과는 다르게 한 줄 표현 방법은 결과값(결과)에 조건값이 True(참)이면 A를 False(거짓)이면 B를 반환하도록 할 수 있다.
+
+
+-----------------------------------------------------------------
+
+문자열.replace("검색 문자", "치환 문자", 치환 횟수)
+치환횟수 없으면 모두다 바꿈, 횟수 있으면 앞에서부터
+
+
+
+
+re.sub(정규식,대체할문자,대상문자열)
+
+ex ) 
+
+s = s.lower()
+re.sub('[^a-z0-9]','',s)
+
+
+------------------------------------------------
+
+'구분자'.join(리스트) >> 합쳐져서 str됨
+
+
+
+------------------------------------------------
+
+
+>>> divmod(10,3)
+(3,1)
+>>> (10//3, 10%3 )
+(3,1)
+
+
+
+
+
+
+
+functools.reduce(lambda x,y : 10 * x + y, a, 0 ) 
+functools.reduce(lambda x,y : 10 * x + y, [1,2,3,4,5] )
