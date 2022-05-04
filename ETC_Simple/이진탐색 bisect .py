@@ -1,3 +1,17 @@
+...
+bisect.bisect_left(정렬된리스트,값)     
+bisect.bisect_right(정렬된리스트,값)   
+
+정렬된 순서를 유지하면서 리스트에 데이터를 삽입할 가장 (왼쪽/오른쪽) 인덱스를 찾는 메서드
+
+
+만약 4라면
+1  2  4  4  8 
+    ↑    ↑
+...
+
+
+
 from bisect import bisect_left, bisect_right
 
 # 값이 [left_value, right_value]인 데이터의 개수를 반환하는 함수
