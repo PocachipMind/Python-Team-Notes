@@ -17,7 +17,7 @@ for _ in range(m):
     
 
 #플로이드 워셜 알고리즘
-#k,a,b 잘맞
+#k,a,b 잘맞출것
 for k in range(1,n+1):
     for a in range(1, n+1):
         for b in range( 1, n+1):
