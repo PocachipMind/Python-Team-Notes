@@ -11,7 +11,7 @@ start = 시작노드
 
 graph = [[] for _ in range(n+1)]
 
-distance = [INF] * n+1
+distance = [INF] * (n+1)
 
 # 간선 정보 입력 받기
 for _ in range(m):
