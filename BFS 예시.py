@@ -34,3 +34,41 @@ visited = [False] * n
 
 
 bfs(graph, 1, visited)
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+# 거리 2 이하인곳 찾는 그거인데, 약간 이런식으로 구현하는거 익혀둬야함.
+from collections import deque
+
+#    북  동  남 서 
+dx = [-1, 0, 1, 0]
+dy = [ 0, 1, 0,-1]
+
+def bfs(place,i,j):
+    q = deque()
+    visited = []
+    q.append((i,j,0))
+    visited.append((i,j))
+    
+    while q:
+        x,y,cost = q.popleft()
+        
+        if place[x][y] == "X":
+            continue
+        if cost >= 3:
+            continue
+        if place[x][y] == "P" and cost != 0:
+            return False
+        
+        for nxt in range(4):
+            nx = x + dx[nxt]
+            ny = y + dy[nxt]
+            if nx <0 or ny <0 or nx >= 5 or ny >=5:
+                continue
+            if not (nx,ny) in visited:
+                q.append((nx,ny,cost+1))
+                visited.append((nx,ny))
+                
+    return True
