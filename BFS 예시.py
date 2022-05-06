@@ -50,8 +50,8 @@ dy = [ 0, 1, 0,-1]
 def bfs(place,i,j):
     q = deque()
     visited = []
-    q.append((i,j,0))
-    visited.append((i,j))
+    q.append((i,j,0)) # 시작위치넣기
+    visited.append((i,j)) # 방문처리
     
     while q:
         x,y,cost = q.popleft()
@@ -68,7 +68,7 @@ def bfs(place,i,j):
             ny = y + dy[nxt]
             if nx <0 or ny <0 or nx >= 5 or ny >=5:
                 continue
-            if not (nx,ny) in visited:
+            if not (nx,ny) in visited: # 아직 방문하지 
                 q.append((nx,ny,cost+1))
                 visited.append((nx,ny))
                 
