@@ -29,3 +29,48 @@ def networkDelayTime(times, n: int, k: int) -> int:
     return -1
     
 print(networkDelayTime([[2,1,1],[2,3,1],[3,4,1]],4,2))
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+# 내 풀이 
+import heapq
+
+def networkDelayTime(times, n: int, k: int) -> int:
+    INF = int(1e9)
+    distance = [INF] * (n+1)
+    
+    distance[k] = 0
+    q = []
+    heapq.heappush(q,(0,k))
+    
+
+    while q: 
+        # 가장 짧은 거리 노드 꺼내기
+        dist, now = heapq.heappop(q)
+        #현재 노드가 이미 처리된 적 있으면 무시 ( 최단 경로가 더 작은게 이미 있다면 )
+        if distance[now] < dist:
+            continue
+        # 현재 노드와 연결된 다른 노드 확인
+        for i in times:
+            if i[0] != now :
+                continue
+            cost = dist + i[2]
+            #현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
+            if cost < distance[i[1]]:
+                distance[i[1]] = cost
+                heapq.heappush(q, (cost, i[1]))
+                
+    
+    distance[0] = -1
+    if INF in distance :
+        return -1
+    else:
+        return max(distance)
+    
+print(networkDelayTime([[2,1,1],[2,3,1],[3,4,1]],4,2))
