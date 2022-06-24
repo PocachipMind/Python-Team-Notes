@@ -10,6 +10,9 @@ bisect.bisect_right(정렬된리스트,값)
      ↑     ↑
     (2)   (4)
 ...
+
+
+
 '''
 이진탐색 구현
 index = bisect.bisect_left(정렬된리스트,값)
