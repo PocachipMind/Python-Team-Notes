@@ -2,6 +2,8 @@
 bisect.bisect_left(정렬된리스트,값)     
 bisect.bisect_right(정렬된리스트,값)   
 
+# bisect.bisect_left(정렬된리스트,값,lo=0,hi=len(정렬된리스트)) 이므로 로에 값을 넣어줄수 있음.
+
 정렬된 순서를 유지하면서 리스트에 데이터를 삽입할 가장 (왼쪽/오른쪽) 인덱스를 찾는 메서드
 
 
