@@ -1,3 +1,4 @@
+# 방문함과 동시에 visited 체크 할것
 # dfs 메소드 정의
 def dfs(graph, v, visited):
     # 현재 노드 방문 처리
