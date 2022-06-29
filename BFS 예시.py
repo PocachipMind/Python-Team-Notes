@@ -1,3 +1,5 @@
+# 큐에 넣으면서 visited 체크할것.
+
 from collections import deque
 
 def bfs(graph, start, visited):
